@@ -291,5 +291,16 @@ nix develop -c fish
 mkdir build
 cd build
 
+cmake \
+  -DCMAKE_BUILD_TYPE=RelWithDebInfo \
+  -DCMAKE_CXX_FLAGS:STRING=-stdlib=libstdc++ \
+  -DCMAKE_EXE_LINKER_FLAGS:STRING=-stdlib=libstdc++ \
+  -DLAF_BACKEND=skia \
+  -DSKIA_DIR=$SKIA \
+  -DSKIA_LIBRARY_DIR=$SKIA/out/Release-x64 \
+  -DSKIA_LIBRARY=$SKIA/out/Release-x64/libskia.a \
+  -G Ninja \
+  ..
+
 
 
