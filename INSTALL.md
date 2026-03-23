@@ -268,3 +268,28 @@ configuring each `USE_SHARED_` option.
 After running `cmake -G`, you can edit `build/CMakeCache.txt` file,
 and enable the `USE_SHARED_` flag (set its value to `ON`) of the
 library that you want to be linked dynamically.
+
+
+# Compile Nixos (generated with ChatGPT)
+
+pre-compiled Skia version
+https://github.com/aseprite/skia/releases/download/m124-08a5439a6b/Skia-Linux-Release-x64.zip
+
+releases page
+https://github.com/aseprite/skia/releases/
+
+saya menyimpan di 
+aseprite
+Skia-Linux-Release-x64
+
+git clone https://github.com/DirmdsLab/aseprite.git
+cd aseprite
+git submodule update --init --recursive --depth=1
+
+nix develop -c fish
+
+mkdir build
+cd build
+
+
+
