@@ -36,7 +36,7 @@
         export CXXFLAGS="-stdlib=libstdc++"
         export LDFLAGS="-stdlib=libstdc++"
 
-        export SKIA="$(realpath ../Skia-Linux-Release-x64/out/Release-x64)"
+        export SKIA="${toString projectRoot}/../Skia-Linux-Release-x64/out/Release-x64"
 
         echo "Aseprite build env (generated with ChatGPT)"
       '';
