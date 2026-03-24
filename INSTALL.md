@@ -270,24 +270,52 @@ and enable the `USE_SHARED_` flag (set its value to `ON`) of the
 library that you want to be linked dynamically.
 
 
-# Compile Nixos (generated with ChatGPT)
+# Compile Aseprite on NixOS (generated with ChatGPT)
 
-pre-compiled Skia version
-https://github.com/aseprite/skia/releases/download/m124-08a5439a6b/Skia-Linux-Release-x64.zip
+## Precompiled Skia
 
-releases page
-https://github.com/aseprite/skia/releases/
+Download the precompiled Skia version:  
+[Skia-Linux-Release-x64.zip](https://github.com/aseprite/skia/releases/download/m124-08a5439a6b/Skia-Linux-Release-x64.zip)  
 
-saya menyimpan di 
-aseprite
-Skia-Linux-Release-x64
+Official releases page:  
+[Skia Releases](https://github.com/aseprite/skia/releases/)
 
+I stored it in:
+
+## Directory Structure
+
+```
+
+aseprite/
+├── main_repo/
+
+Skia-Linux-Release-x64/
+├── include/
+├── modules/
+├── out/
+├── src/
+├── third_party/
+└── LICENSE
+
+```
+
+## Clone Aseprite
+
+```bash
 git clone https://github.com/DirmdsLab/aseprite.git
 cd aseprite
 git submodule update --init --recursive --depth=1
+````
 
+## Enter Nix development shell
+
+```bash
 nix develop -c fish
+```
 
+## Build Aseprite
+
+```bash
 mkdir build
 cd build
 
@@ -302,5 +330,7 @@ cmake \
   -G Ninja \
   ..
 
+ninja aseprite
+```
 
 
